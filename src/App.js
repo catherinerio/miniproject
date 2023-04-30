@@ -9,11 +9,7 @@ function App() {
   // const [name, setName] = React.useState("");
   const [selectedFile, setSelectedFile] = React.useState(null);
   const {value, setValue} = React.useState();
-  const handleChange = (e)=>{
-    setTimeout(() => {
-    setValue(e.target.value);
-  },100);
-};
+  
 if (value) {
   return (
     <>
@@ -64,7 +60,7 @@ if (value) {
             <Grid xs={12} sm={6} item fullWidth>
             <FormControl fullWidth>
               <InputLabel>Clothing</InputLabel>
-              <Select value={value} label="Clothing" onChange={(e)=>handleChange(e)}>
+              <Select value={value} label="Clothing" handleChange={(e)=>setValue(e.target.value)}>
                 <MenuItem value={'Saree'} >Saree</MenuItem>
                 <MenuItem value={'Blouse'}>Blouse</MenuItem>
                 <MenuItem value={'Dress'}>Dress</MenuItem></Select></FormControl>
